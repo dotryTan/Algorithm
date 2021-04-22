@@ -7,6 +7,15 @@
 
 import Foundation
 
+var sortArray = [6, 3, 5, 2, 1, 9, 4, 7, 8]
+//sortArray.bubbleSort()
+//sortArray.bubbleSortForPos()
+//sortArray.bubbleSortForTwoWay()
+//sortArray.selectSort()
+//sortArray.selectSorForDichotomy()
+sortArray.fastSort()
+print(sortArray)
+
 extension FixedWidthInteger {
     func nextPowerOf2() -> Self {
         return 1 << (bitWidth - (self - 1).leadingZeroBitCount)
@@ -42,7 +51,7 @@ print(nodeStr)
 
 print("pwwkew".longestUnduplicatedSubstring())
 
-print("122342".longestUnduplicatedSubstring1())
+print("122342341".longestUnduplicatedSubstring1())
 
 let str = "pwwkew"
 var strs = str.cString(using: .utf8)!
@@ -79,14 +88,23 @@ for i in 0..<h.count {
 var numsPtr1 = withUnsafeMutablePointer(to: &nums1[0], { $0 })
 print(projectionArea(numsPtr1))
 
-var nums2: [Int32] = [1,3,7,11,12,14,18,23,35]
-let numsPtr2 = lenLongestFibSubseq(withUnsafeMutablePointer(to: &nums2[0], { $0 }))
-var nums21 = [numsPtr2?.pointee ?? 0, numsPtr2?.advanced(by: 1).pointee ?? 0]
+var nums2: [Int32] = [1, 3, 7, 11, 12, 14, 18, 23, 35]
+let numsPtr21 = lenLongestFibSubseq(withUnsafeMutablePointer(to: &nums2[0], { $0 }))
+var nums21 = [numsPtr21?.pointee ?? 0, numsPtr21?.advanced(by: 1).pointee ?? 0]
 for i in 2..<nums2.count {
-    let value = numsPtr2?.advanced(by: i).pointee ?? 0
+    let value = numsPtr21?.advanced(by: i).pointee ?? 0
     guard value == nums21[i - 2] + nums21[i - 1] else { break }
     nums21.append(value)
 }
 print(nums21)
+
+let numsPtr22 = lenLongestFibSubseq1(withUnsafeMutablePointer(to: &nums2[0], { $0 }))
+var nums22 = [numsPtr22?.pointee ?? 0, numsPtr22?.advanced(by: 1).pointee ?? 0]
+for i in 2..<nums2.count {
+    let value = numsPtr22?.advanced(by: i).pointee ?? 0
+    guard value == nums22[i - 2] + nums22[i - 1] else { break }
+    nums22.append(value)
+}
+print(nums22)
 print("end")
 

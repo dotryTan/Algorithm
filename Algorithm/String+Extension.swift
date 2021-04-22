@@ -14,14 +14,14 @@ extension String {
         var ans = 0, i = 0, j = 0
         while (i < count && j < count) {
             let c = self[index(startIndex, offsetBy: j)]
-            if !array.contains(c) {
+            if let index = array.firstIndex(of: c) {
+                //删除重复的字符
+                array.removeSubrange(0...index)
+                i += 1
+            } else {
                 array.append(c)
                 ans = max(ans, j - i)
                 j += 1
-            } else {
-                //删除重复的字符
-                array.removeSubrange(0...array.firstIndex(of: c)!)
-                i += 1
             }
         }
         return String(array)
@@ -41,6 +41,6 @@ extension String {
             j += 1
         }
         /// 从最近一次重复字符的下标往后一位取子字符串
-        return String(dropFirst(i))
+        return String(dropFirst(i + 1))
     }
 }

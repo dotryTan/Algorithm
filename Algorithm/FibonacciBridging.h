@@ -15,7 +15,7 @@ extern "C" {
 #endif
     
 int *lenLongestFibSubseq(int a[]);
-    
+int *lenLongestFibSubseq1(int a[]);
 #ifdef __cplusplus
 }
 #endif

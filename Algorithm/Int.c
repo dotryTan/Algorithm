@@ -33,7 +33,7 @@ int removeDuplicates(int nums[], int length) {
                 nums[j + 1] = t;
             }
         }
-    }
+    }                                                  
     int i = 0;
     for (int j = 1; j < length; j++) {
         if (nums[j] != nums[i]) {

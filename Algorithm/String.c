@@ -127,5 +127,9 @@ char *longestPalindromeSubstring1(char *s) {
 //        char *s2 = expandAroundCenter(s, i, i + 1);
 //        if (strlen(s2) > strlen(sub)) sub = s2;
     }
+    
+    char name[80];
+    memset(name, '\0', sizeof(name));
+    int isReturn = strcmp(name, "") == 0;
     return sub;
 }
