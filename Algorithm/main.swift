@@ -7,13 +7,16 @@
 
 import Foundation
 
-var sortArray = [6, 3, 5, 2, 1, 9, 4, 7, 8]
+var sortArray = [6, 3, 5, 8, 1, 9, 4, 7, 2]
 //sortArray.bubbleSort()
 //sortArray.bubbleSortForPos()
 //sortArray.bubbleSortForTwoWay()
 //sortArray.selectSort()
+//sortArray.insertSort()
 //sortArray.selectSorForDichotomy()
-sortArray.fastSort()
+//sortArray.fastSort()
+//sortArray.hillSort()
+sortArray.mergeSort()
 print(sortArray)
 
 extension FixedWidthInteger {
